@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Tropical Paradise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            background-image: url('https://www.holidify.com/images/bgImages/BALI.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+            justify-content: center;
+            padding-left: 50px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        .btn-transparent {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn-transparent:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .section-heading {
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.189) !important; 
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(0, 0, 0, 0.885) !important;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="50" tabindex="0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#attractions">Attractions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#culture">Culture</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="home" class="hero">
+        <div class="container">
+            <h1>Welcome to Bali</h1>
+            <h2>The Island of Gods</h2>
+            <p>Bali offers a unique blend of serenity, natural beauty, and rich culture.</p>
+            <p>From ancient temples to pristine beaches, experience a tropical paradise that captivates every traveler’s heart.</p>
+            <a href="#attractions" class="btn btn-transparent btn-lg">Explore Now</a>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 id="attractions" class="text-center section-heading">Why Visit Bali?</h2>
+        <p class="text-center">Bali is a tropical paradise offering beautiful beaches, lush jungles, and vibrant culture. Whether you’re seeking adventure, relaxation, or a deep cultural experience, Bali has it all!</p>
+        
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://images.squarespace-cdn.com/content/v1/51a39504e4b093105c265c24/1494949380445-Q48YETIUZNG1TFFR9KKX/glenn-guy-wounded-monkey.jpg" class="card-img-top" alt="Ubud Monkey Forest">
+                    <div class="card-body">
+                        <h5 class="card-title">Ubud Monkey Forest</h5>
+                        <p class="card-text">A natural sanctuary for monkeys and home to centuries-old temples, perfect for nature lovers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://theworldtravelguy.com/wp-content/uploads/2020/11/DJI_0943_1200.jpg" class="card-img-top" alt="Tanah Lot Temple">
+                    <div class="card-body">
+                        <h5 class="card-title">Tanah Lot Temple</h5>
+                        <p class="card-text">A picturesque temple perched on a rock formation in the ocean, one of Bali’s most iconic landmarks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://images.locationscout.net/2016/01/sunset-at-kuta-beach-indonesia.webp?h=1400&q=80" class="card-img-top" alt="Kuta Beach">
+                    <div class="card-body">
+                        <h5 class="card-title">Kuta Beach</h5>
+                        <p class="card-text">Famous for its long sandy shores and surf-perfect waves, ideal for a day of relaxation or water sports.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="culture" class="container mt-5">
+        <h2 class="text-center section-heading">Bali's Rich Culture</h2>
+        <p class="text-center">From traditional dances to stunning temples, Bali offers a rich cultural experience that will immerse you in a world of art, religion, and history.</p>
+        
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <img src="https://images.squarespace-cdn.com/content/v1/53b839afe4b07ea978436183/1592588997156-8UG39D1V3ZD5DVS11JQP/IMG_3492.jpg?format=1000w" class="img-fluid" alt="Balinese Dance">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <p>Bali's traditional dances such as the Barong and Kecak dance tell ancient stories through graceful movements and intricate costumes. These performances are a must-see for any visitor to the island.</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
