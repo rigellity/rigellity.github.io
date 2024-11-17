@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attack on Titan Gallery</title>
+  <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/originals/57/ed/3b/57ed3b5c113d60d1fa0eced7e2e37357.png">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000;
+      color: #f8f9fa;
+      font-family: 'Cinzel', serif;
+    }
+    .container {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+    }
+    h1 {
+      font-size: 47px;
+      color: #ffffff;
+      text-shadow: 2px 2px #000;
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo {
+      width: 50px;
+      height: auto;
+    }
+    .filter-section {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .filter-section input, .filter-section select {
+      background-color: #333;
+      color: #fff;
+      font-family: 'Cinzel', serif;
+    }
+    .card {
+      background-color: #2a2a2a;
+      border: none;
+      transition: transform 0.2s;
+      font-family: 'Cinzel', serif;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      height: 300px;
+      object-fit: cover;
+    }
+    .btn-primary, .btn-secondary {
+      background-color: #3249a7;
+      border: none;
+      font-family: 'Cinzel', serif;
+    }
+    .btn-primary:hover {
+  background-color: #808080;
+  border: none;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="text-center">
+      <h1>
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1a3ddf6e-5b6d-4584-adbd-c5b934765050/ddv1mqn-3754006d-8d0a-4d69-8b6e-80576ff51ff1.png/v1/fill/w_400,h_553/attack_on_titan_logo_by_asmaagamal_ddv1mqn-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFhM2RkZjZlLTViNmQtNDU4NC1hZGJkLWM1YjkzNDc2NTA1MFwvZGR2MW1xbi0zNzU0MDA2ZC04ZDBhLTRkNjktOGI2ZS04MDU3NmZmNTFmZjEucG5nIiwiaGVpZ2h0IjoiPD01NTMiLCJ3aWR0aCI6Ijw9NDAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzFhM2RkZjZlLTViNmQtNDU4NC1hZGJkLWM1YjkzNDc2NTA1MFwvYXNtYWFnYW1hbC00LnBuZyIsIm9wYWNpdHkiOjk1LCJwcm9wb3J0aW9ucyI6MC40NSwiZ3Jhdml0eSI6ImNlbnRlciJ9fQ.QjfPK7aPpCt_XnLfrRbOwSgIIz2ToZSIpU8X5uox2WI" alt="Attack on Titan Logo" class="logo">
+        Attack on Titan Characters
+      </h1>
+    </div>
+  
+    <div class="filter-section mt-4">
+      <input type="text" id="searchInput" class="form-control" placeholder="Enter character name">
+      <select id="statusFilter" class="form-control">
+        <option value="">Status</option>
+        <option value="alive">Alive</option>
+        <option value="deceased">Deceased</option>
+        <option value="unknown">Unknown</option>
+      </select>
+      <select id="genderFilter" class="form-control">
+        <option value="">Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="unknown">Unknown</option>
+      </select>
+      <button class="btn btn-primary" onclick="fetchCharacters()">Search</button>
+    </div>
+
+    <div id="characters" class="row"></div>
+  </div>
+
+  <script>
+    const API_BASE_URL = 'https://api.attackontitanapi.com/characters';
+
+    function fetchCharacters() {
+      const name = document.getElementById('searchInput').value.trim();
+      const status = document.getElementById('statusFilter').value;
+      const gender = document.getElementById('genderFilter').value;
+      
+      let url = API_BASE_URL + '?';
+      if (name) url += `name=${name}&`;
+      if (status) url += `status=${status}&`;
+      if (gender) url += `gender=${gender}&`;
+
+      fetch(url)
+        .then(response => {
+          if (!response.ok) throw new Error('Characters not found');
+          return response.json();
+        })
+        .then(data => {
+          displayCharacters(data.results);
+        })
+        .catch(error => {
+          console.error('Error fetching characters:', error);
+          document.getElementById('characters').innerHTML = '<p class="text-danger">Characters not found.</p>';
+        });
+    }
+
+    function displayCharacters(characters) {
+      const charactersContainer = document.getElementById('characters');
+      charactersContainer.innerHTML = ''; 
+      characters.forEach(character => {
+        console.log('Character Name:', character.name);
+         console.log('Image URL:', character.img);
+
+        const characterCard = `
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="${character.img}" class="card-img-top" alt="${character.name}">
+              <div class="card-body text-center">
+                <h5 class="card-title">${character.name}</h5>
+                <a href="view.html?id=${character.id}" class="btn btn-secondary">View Details</a>
+              </div>
+            </div>
+          </div>
+        `;
+        charactersContainer.insertAdjacentHTML('beforeend', characterCard);
+      });
+    }
+
+    fetchCharacters();
+  </script>
+</body>
+</html>
