@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack on Titan </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Spectral:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="https://logos-world.net/wp-content/uploads/2022/01/Attack-on-Titan-Logo-2009.png"
+        type="image/png">
+
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: #fff;
+            font-family: 'Spectral', serif;
+            font-size: 16px;
+        }
+
+        .titan-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-carousel {
+            height: 550px;
+            width: 100%;
+        }
+
+        .carousel-inner,
+        .carousel-item {
+            height: 100%;
+        }
+
+        .carousel-item img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .header-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header-logo img {
+            width: 400px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            background-color: #2b2b2b;
+            border: none;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-body {
+            flex-grow: 1;
+        }
+
+        .card-title {
+            color: #e63946;
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            color: #ffffff;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            color: #ffffff;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        .btn {
+            background-color: #e63946;
+            color: #fff;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #d62828;
+        }
+
+        .collapse-icon {
+            cursor: pointer;
+            font-size: 24px;
+            color: #e63946;
+            transition: transform 0.3s;
+        }
+
+        .collapse-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .collapse p {
+            color: #ffffff;
+        }
+
+        .collapse-icon.collapsed {
+            transform: rotate(360deg);
+        }
+
+        .titans-overview {
+            margin-bottom: 30px;
+            text-align: justify;
+            background-color: #2b2b2b;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 20px;
+        }
+
+        .titan-carousel {
+            height: 250px;
+        }
+
+        .carousel-inner,
+        .carousel-item {
+            height: 100%;
+        }
+
+        .carousel-item iframe {
+            height: 100%;
+            width: 100%;
+            border: none;
+        }
+
+        .carousel-control-prev.disabled,
+        .carousel-control-next.disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #111;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        .footer a {
+            color: #e63946;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-logo">
+        <img src="https://cdn.freelogovectors.net/wp-content/uploads/2023/01/attack_on-titan-logo-freelogovectors.net_.png"
+            alt="Attack on Titan Logo">
+    </div>
+
+    <div id="headerCarousel" class="carousel slide mb-4" data-bs-ride="carousel"
+        style="max-width: 1200px; margin: auto;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2019/07/attack-on-titan-colossal-titan.jpg"
+                    class="d-block w-100 header-carousel" alt="Colossal Titan">
+                <div class="carousel-caption">
+                    <h6>Colossal Titan</h6>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://static.wikia.nocookie.net/shingekinokyojin/images/9/97/The_Female_Titan_restricted.png/revision/latest?cb=20130818110449"
+                    class="d-block w-100 header-carousel" alt="Female Titan">
+                <div class="carousel-caption">
+                    <h6>Female Titan</h6>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/02/armored-titan-in-fort-slava-in-aot.jpg"
+                    class="d-block w-100 header-carousel" alt="Armored Titan">
+                <div class="carousel-caption">
+                    <h6>Armored Titan</h6>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://static.wikia.nocookie.net/shingekinokyojin/images/3/3a/Zeke_transforms_Ragako_village.png/revision/latest?cb=20210308014709"
+                    class="d-block w-100 header-carousel" alt="Cart Titan">
+                <div class="carousel-caption">
+                    <h6>Cart Titan</h6>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.alphacoders.com/130/thumb-1920-1305105.png"
+                    class="d-block w-100 header-carousel" alt="Beast Titan">
+                <div class="carousel-caption">
+                    <h6>Beast Titan</h6>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUctMMeU41CgjyVOKaXsAW8bwN4is3nAL5Qo9x_JL6bl9CiOIbbas-5f8xk7qyAztEwx7Qb2Q6c2zJMplSnqM64crBZbW3EfeY6lfxUYlpGoqs1q-7XjLqGgT1Wl3h_uztuJASeXRe9X7m/w0/attack-titan-attack-on-titan-uhdpaper.com-4K-107.jpg"
+                    class="d-block w-100 header-carousel" alt="Attack Titan">
+                <div class="carousel-caption">
+                    <h6>Attack Titan</h6>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.alphacoders.com/118/1185302.jpg" class="d-block w-100 header-carousel"
+                    alt="War Hammer Titan">
+                <div class="carousel-caption">
+                    <h6>War Hammer Titan</h6>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images6.alphacoders.com/121/1218887.jpg" class="d-block w-100 header-carousel"
+                    alt="Founding Titan">
+                <div class="carousel-caption">
+                    <h6>Founding Titan</h6>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/958e0a6e-90f6-40c9-a270-8fe4b2a2d8fc/detb2xl-e1795c75-6cb4-4ead-99b0-f66e2c6bc1a6.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk1OGUwYTZlLTkwZjYtNDBjOS1hMjcwLThmZTRiMmEyZDhmY1wvZGV0YjJ4bC1lMTc5NWM3NS02Y2I0LTRlYWQtOTliMC1mNjZlMmM2YmMxYTYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0._xs3xA3o2o412KamS9hWmLufmb9MeJx5ewHU6-ooRhU"
+                    class="d-block w-100 header-carousel" alt="Jaw Titan">
+                <div class="carousel-caption">
+                    <h6>Jaw Titan</h6>
+                </div>
+            </div>
+            <button id="headerPrevButton" class="carousel-control-prev" type="button" data-bs-target="#headerCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button id="headerNextButton" class="carousel-control-next" type="button" data-bs-target="#headerCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="container">
+            <div class="titans-overview">
+                <h2>About the Titans</h2>
+                <p>
+                    The Nine Titans (九つの巨人 Kokonotsu no Kyojin?) were nine Titan powers that had been passed down
+                    through the Eldian people for nearly 2,000 years after the death of Ymir Fritz until the death of
+                    Eren Yeager, with each having their own name. The nine Titan powers were the Founding Titan, the
+                    Armored Titan, the Attack Titan, the Beast Titan, the Cart Titan, the Colossus Titan, the Female
+                    Titan, the Jaw Titan and the War Hammer Titan. Around 2,000 years ago, Ymir Fritz obtained the power
+                    of the Titans and became the first Titan, which later came to be known as the Founding Titan.
+                    Thirteen years later, she died and her power was then divided between her three daughters who had
+                    been forced by their father to consume her remains. Eventually, the powers would split further
+                    into the individual Nine Titans, which were subsequently inherited by nine of her descendants.
+                    The Nine Titans soon destroyed the ancient nation of Marley and conquered the entire continent to
+                    build the Eldian Empire. As family relations play a significant role in passing and inheriting
+                    memories from the previous inheritors of the Titans, the Nine Titans normally resided within
+                    noble families during Eldia's reign. Examples include the Fritz family with the Founding Titan
+                    and Tybur family with the War Hammer Titan.
+                </p>
+            </div>
+
+            <div class="row d-flex align-items-stretch">
+                <!-- Colossal -->
+                <div class="col-md-4 titan-card">
+                    <div class="card">
+                        <div id="colossalCarousel" class="carousel slide titan-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/dGPwmHiW4Lg?si=sJBaxB7sQink-3K0"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/FDO9owTZtV8?si=tnLKYpscD74BwJ4H"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#colossalCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#colossalCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Colossal Titan</h5>
+                            <p class="card-text">The Colossal Titan (超大型巨人 Chō ōgata Kyojin) was one of the Nine Titans
+                                and served as the primary antagonist of the first three seasons of Attack on Titan
+                                series. It was notable for its incredible size and its ability to control both the steam
+                                emitted by its Titan body and the amount of energy released during its transformations.
+                            </p>
+                            <div class="collapse-wrapper">
+                                <span class="collapse-icon collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#colossalInfo" aria-expanded="false"
+                                    aria-controls="colossalInfo">⯯</span>
+                            </div>
+                            <div class="collapse mt-2" id="colossalInfo">
+                                <p>Unlike the other Nine Titans, the Colossal Titan possesses virtually no skin on its
+                                    face or body, leaving most of its musculature exposed. In addition, the Titan's
+                                    skeletal structure is also laid bare on certain parts of its body, most prominently
+                                    along the face. Bertholdt's Colossal Titan had a heavily deformed appearance, with
+                                    skeletal ears, no lips and a facial structure that drastically differed from his
+                                    human form. On the other hand, Armin's Colossal Titan had some skin around its lips
+                                    but lacked ears entirely.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- female -->
+                <div class="col-md-4 titan-card">
+                    <div class="card">
+                        <div id="femaleCarousel" class="carousel slide titan-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/JHECPohluKA?si=3gjdwS3QML-eObkW"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/6YZJ7x4lY08?si=1sajzwVrnsIH7T8x"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#femaleCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#femaleCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Female Titan</h5>
+                            <p class="card-text">The Female Titan (女型の巨人 Megata no Kyojin) was one of the Nine Titans
+                                and possessed the ability to easily mimic the attributes of the other Titans. It could
+                                also selectively harden parts of its skin and attract Pure Titans with its screams,
+                                possibly due to its aforementioned mimicry ability. The Female Titan appeared female
+                                regardless of the possessor's biological sex.</p>
+                            <div class="collapse-wrapper">
+                                <span class="collapse-icon collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#femaleInfo" aria-expanded="false"
+                                    aria-controls="femaleInfo">⯯</span>
+                            </div>
+                            <div class="collapse mt-2" id="femaleInfo">
+                                <p>Similar to the Founding Titan and Zeke Yeager's Beast Titan, the Female Titan was
+                                    able to exercise a degree of influence over Pure Titans through a scream-based
+                                    ability;[7] in the Female's case, it was able to attract Pure Titans to itself.
+                                    Annie Leonhart used this ability to gather Titans on Paradis Island to the Walls
+                                    during the fall of Wall Maria.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Armored -->
+                <div class="col-md-4 titan-card">
+                    <div class="card">
+                        <div id="armoredCarousel" class="carousel slide titan-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/zhVeZLsOQXs?si=5YFnq8MgaB2AYMoQ"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/Q6H5NHwuv6s?si=-HjH40X7c1YfYDwA"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#armoredCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#armoredCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Armored Titan</h5>
+                            <p class="card-text">The Armored Titan (鎧の巨人 Yoroi no Kyojin?) was covered by hardened,
+                                armor-like skin, except in key areas necessary for movement. It also possessed the
+                                ability to harden its arms and feet into sharper claws which could be used to climb
+                                structures such as the Walls.</p>
+                            <div class="collapse-wrapper">
+                                <span class="collapse-icon collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#armoredInfo" aria-expanded="false"
+                                    aria-controls="armoredInfo">⯯</span>
+                            </div>
+                            <div class="collapse mt-2" id="armoredInfo">
+                                <p>The defining feature of the Armored Titan was the all-encompassing layer of plated,
+                                    armor-like segments of hardened skin protecting the Titan body. This armor was
+                                    capable of shielding the Titan from significant amounts of damage, shielding direct
+                                    hit from a cannon, breaking ultrahard steel blades of vertical maneuvering equipment
+                                    when struck[5] and withstanding the Colossus Titan's explosive transformation[6].
+                                    However, the armor had some limitations and was not capable of protecting the user
+                                    from high-power weaponry such as the Mid-East Allied Forces' anti-Titan artillery.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 row -->
+            <div class="row d-flex align-items-stretch" style="padding-top: 20px; padding-bottom: 20px;">
+                <!-- Cart -->
+                <div class="col-md-4 titan-card">
+                    <div class="card">
+                        <div id="cartCarousel" class="carousel slide titan-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/sZi8DDaEt70?si=MyS9jDRy534Yq55P"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/7ipQnXPDjIU?si=2yYlxRrLW5lLFRtM"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#cartCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#cartCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cart Titan</h5>
+                            <p class="card-text">The Cart Titan (車力の巨人 Shariki no Kyojin) was quadrupedal and had great
+                                endurance that allowed it to stay transformed for long periods of time, as well as
+                                transform in rapid succession without needing to rest, hundreds of times per day even.
+                                Its speed rivaled that of the Jaw Titan.</p>
+                            <div class="collapse-wrapper">
+                                <span class="collapse-icon collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#cartInfo" aria-expanded="false" aria-controls="cartInfo">⯯</span>
+                            </div>
+                            <div class="collapse mt-2" id="cartInfo">
+                                <p>The Cart Titan possessed a level of endurance greater than that of the other members
+                                    of the Nine Titans, allowing for the inheritor to partake in long missions without
+                                    the need for rest. Its absorption resistance allowed it to maintain its Titan form
+                                    for long periods of time, making it an ideal candidate for a variety of tactics,
+                                    including the clearing of trenches and long-term operations into enemy territory.
+                                    Likewise, Pieck claims that the Cart Titan's power allowed her to perform hundreds
+                                    of consecutive transformations before she started to feel fatigued. On the
+                                    downside, the Cart Titan had much lower defenses than the other Nine Titans and was
+                                    more likely to be taken down by a critical or severe blow.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- beast -->
+                <div class="col-md-4 titan-card">
+                    <div class="card">
+                        <div id="beastCarousel" class="carousel slide titan-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/TWrjP_9kleU?si=uNX1ac6VyDSemKAN"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/nWnQwXVFdzw?si=OnttTUC35IkhgAmG"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#beastCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#beastCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Beast Titan</h5>
+                            <p class="card-text">The Beast Titan (獣の巨人 Kemono no Kyojin) could take on the physical
+                                characteristics of different animals that vary between its inheritors. Zeke Yeager's
+                                Beast Titan had several unique abilities that no other known Beast Titan had, thanks to
+                                his royal blood and throwing experience. The nature of its power was similar to that of
+                                the Founding Titan.</p>
+                            <div class="collapse-wrapper">
+                                <span class="collapse-icon collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#beastInfo" aria-expanded="false" aria-controls="beastInfo">⯯</span>
+                            </div>
+                            <div class="collapse mt-2" id="beastInfo">
+                                <p>Unlike the majority of other Titans, which retained a largely "human" appearance, the
+                                    Beast Titan exhibited animal-like traits, which greatly varied depending on its
+                                    holders: some of the various animal appearances shown from prior holders of the
+                                    Beast Titan have included monkeys, birds, crocodiles, elk, bulls,
+                                    wolves, snakes, rabbits, dinosaurs, okapis and goats. Zeke
+                                    Yeager's Beast Titan looked like an ape and Tom Ksaver's contained traits found in
+                                    bighorn sheep, while Falco Grice testifies that there once existed a Beast Titan
+                                    with wings. Furthermore, Zeke's spinal fluid, which carried the power of the Beast
+                                    Titan, was used to transform Falco into a Titan and evidently gave his Jaw Titan
+                                    falcon-like characteristics similar to those of a Beast Titan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- attack -->
+                <div class="col-md-4 titan-card">
+                    <div class="card">
+                        <div id="attackCarousel" class="carousel slide titan-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/Uy41ee3ypy8?si=s0yqBdZ5nxU3KR2k"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/K59ADImvpEU?si=byPlU0u_soJSjFRM"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#attackCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#attackCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Attack Titan</h5>
+                            <p class="card-text">The Attack Titan (進撃の巨人 Shingeki no Kyojin, also translated as
+                                Attacking Titan) was one of the Nine Titans that could see through the memories of its
+                                past and future holders, and is said to have fought for freedom throughout the course of
+                                numerous generations.</p>
+                            <div class="collapse-wrapper">
+                                <span class="collapse-icon collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#attackInfo" aria-expanded="false"
+                                    aria-controls="attackInfo">⯯</span>
+                            </div>
+                            <div class="collapse mt-2" id="attackInfo">
+                                <p>While all of the Nine Titans could receive memories of past inheritors, the Attack
+                                    Titan could also receive memories of inheritors yet to come. Zeke Yeager
+                                    described it as "the power to transcend time", speculating that Eren sent specific
+                                    memories to Grisha to suit him. These memories led those with the Attack Titan to
+                                    move forward, fighting for freedom. Eren Kruger received memories of Grisha
+                                    Yeager telling his son to protect Mikasa Ackerman and Armin Arlert, although he did
+                                    not know whose memories they were. Grisha Yeager knew of the Founding
+                                    Titan's bloodline restriction from the future memories of his son, Eren. Grisha
+                                    also saw the Rumbling, and, horrified, begged Zeke to stop Eren.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row d-flex align-items-stretch" style="padding-top: 20px; padding-bottom: 20px;">
+                <!-- war hammer -->
+                <div class="col-md-4 titan-card">
+                    <div class="card">
+                        <div id="warhammerCarousel" class="carousel slide titan-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/Ocem_9R1gwY?si=RyFWcMQTCMa-q0SI"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/GkMwvSasIqE?si=dc1jT_1EHcsPeQwD"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#warhammerCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#warhammerCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">War Hammer Titan</h5>
+                            <p class="card-text">The War Hammer Titan (戦鎚の巨人 Sentsui no Kyojin) could materialize
+                                various weapons and structures from its own hardened flesh. It could be controlled
+                                from afar through a cable of Titan flesh while the user remained hidden within a
+                                hardened crystal casing.</p>
+                            <div class="collapse-wrapper">
+                                <span class="collapse-icon collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#warhammerInfo" aria-expanded="false"
+                                    aria-controls="warhammerInfo">⯯</span>
+                            </div>
+                            <div class="collapse mt-2" id="warhammerInfo">
+                                <p>The War Hammer Titan could produce and manipulate structures that were made of
+                                    hardened Titan flesh. Such structures could be weaponized. For example, it could
+                                    form pikes large enough to impale and lift a 15m Titan, flood areas with protrusions
+                                    such as spikes, and manifest the Titan's signature war hammer. This ability
+                                    could also create serrated and bladed weapons, such as a sickle, battle axe or a
+                                    broadsword; even more noteworthy was that the War Hammer Titan was capable of
+                                    manifesting flexible weaponry components, such as the string of a crossbow or the
+                                    whips of a cat-o'-nine-tails, making this a particularly unique brand of
+                                    hardening. Much like the Female Titan, this hardening could also be used to
+                                    encase the human operator of the War Hammer Titan inside a crystal casing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- founding -->
+                <div class="col-md-4 titan-card">
+                    <div class="card">
+                        <div id="foundingCarousel" class="carousel slide titan-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/6KIy6ID-Nyw?si=lpc2niQn7pbkSUko"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/GHq0UKU9MkA?si=OdIuqZczjxj0O-O2"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#vCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#foundingCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Founding Titan</h5>
+                            <p class="card-text">The Founding Titan (始祖の巨人 Shiso no Kyojin?), by screaming, could turn
+                                Subjects of Ymir into Titans, control the minds of Titans, and alter the memories and
+                                bodies of Subjects of Ymir, but only if the inheritor had royal blood or was in contact
+                                with a Titan of royal blood. It was connected to all Subjects of Ymir and
+                                Titans via paths. Eren's form of the Founding Titan is called Doomsday Titan.</p>
+                            <div class="collapse-wrapper">
+                                <span class="collapse-icon collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#foundingInfo" aria-expanded="false"
+                                    aria-controls="foundingInfo">⯯</span>
+                            </div>
+                            <div class="collapse mt-2" id="foundingInfo">
+                                <p>The Founding Titan had several abilities that were activated by screaming. The
+                                    inheritor of the Founding Titan did not have to transform in order to use these
+                                    abilities; human screams would suffice. Furthermore, the screams did not have to be
+                                    loud, or even "screams" in the truest sense: Frieda Reiss used the memory-alteration
+                                    ability by casually talking, although her target was only Historia, who was right in
+                                    front of her.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- jaw -->
+                <div class="col-md-4 titan-card">
+                    <div class="card">
+                        <div id="jawCarousel" class="carousel slide titan-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/D02vEo1XW7w?si=VgCVTB3GNeNLILTh"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/B9-FlhBXym8?si=ZnaT64jLyEfGuzty"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-item active">
+                                    <iframe width="560" height="315"
+                                        src="https://www.youtube.com/embed/31C5MGVNQRk?si=BcrSKid2KQAlT-Dh"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#jawCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#jawCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Jaw Titan</h5>
+                            <p class="card-text">The Jaw Titan (顎の巨人 Agito no Kyojin?) was the swiftest of the Nine
+                                Titans and had sharp, hardened teeth and claws capable of damaging or breaking almost
+                                anything. The Jaw Titan is an assault unit. Its small size makes it the swiftest of all.
+                                Its powerful claws and jaws can crush just about anything.</p>
+                            <div class="collapse-wrapper">
+                                <span class="collapse-icon collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#jawInfo" aria-expanded="false" aria-controls="jawInfo">⯯</span>
+                            </div>
+                            <div class="collapse mt-2" id="jawInfo">
+                                <p>Those who held the power of the Jaw Titan demonstrated significant amounts of speed
+                                    and agility in their Titan form. They could even move fast enough to catch most of
+                                    the other Nine Titans off guard. Though the Jaw Titan was relatively small and weak,
+                                    its mobility excelled in terrain such as Titan Forests. As its name implies, the Jaw
+                                    Titan possessed incredible biting and crushing strength in its jaws and claws which
+                                    could be used with devastating efficiency against both Titans and man-made
+                                    structures.[6][7] Its claws were strong enough to cause severe damage to armored
+                                    opponents such as turrets and even the crystal shell created by the War Hammer
+                                    Titan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Attack on Titan. Visit the <a
+                    href="https://attackontitan.fandom.com/">AOT Wiki</a>.</p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const headerCarousel = document.getElementById('headerCarousel');
+                const prevButton = document.getElementById('headerPrevButton');
+                const nextButton = document.getElementById('headerNextButton');
+
+                function updateButtonState() {
+                    const slides = Array.from(headerCarousel.querySelectorAll('.carousel-item'));
+                    const activeIndex = slides.indexOf(headerCarousel.querySelector('.carousel-item.active'));
+
+                    if (activeIndex === 0) {
+                        prevButton.classList.add('disabled');
+                    } else {
+                        prevButton.classList.remove('disabled');
+                    }
+
+                    if (activeIndex === slides.length - 1) {
+                        nextButton.classList.add('disabled');
+                    } else {
+                        nextButton.classList.remove('disabled');
+                    }
+                }
+
+                headerCarousel.addEventListener('slid.bs.carousel', updateButtonState);
+                updateButtonState();
+            });
+
+        </script>
+</body>
+
+</html>
