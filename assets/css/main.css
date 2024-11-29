@@ -5,35 +5,22 @@
 }
 
 /*https://colorhunt.co/palette/001f3f3a6d8c6a9ab0ead8b1 link ng palette*/
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
   --background-color: #001F3F;
-  /* Background color for the entire website, including individual sections */
   --default-color: #fafafa;
-  /* Default color used for the majority of the text content across the entire website */
   --heading-color: #ffffff;
-  /* Color for headings, subheadings and title throughout the website */
   --accent-color: #EAD8B1;
-  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #6A9AB0;
-  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #000000;
-  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #fafafa;
-  /* The default color of the main navmenu links */
   --nav-hover-color: #EAD8B1;
-  /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #1a1a1a;
-  /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #1a1a1a;
-  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
   --background-color: #1a1a1a;
@@ -52,9 +39,6 @@
   scroll-behavior: smooth;
 }
 
-/*--------------------------------------------------------------
-# General Styling & Shared Classes
---------------------------------------------------------------*/
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -639,24 +623,20 @@ section,
 
 .hero img {
   width: 50%;
-  /* Image takes half the width */
   height: auto;
-  /* Maintain aspect ratio */
   object-fit: cover;
-  /* Ensure image fits well */
 }
 
 .hero .container {
   display: flex;
   width: 100%;
-  align-items: center; /* Center the content vertically */
-  justify-content: space-between; /* Space between the text and image */
+  align-items: center; 
+  justify-content: space-between; 
 }
 
 .hero .content {
   color: white;
-  max-width: 500px; /* Limit the width of the text */
-  z-index: 2;
+  max-width: 500px; 
   padding: 50px; 
 }
 
